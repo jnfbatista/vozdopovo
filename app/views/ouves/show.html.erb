@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Titulo:</b>
+  <%= @ouve.titulo %>
+</p>
+
+<p>
+  <b>Ideia:</b>
+  <%= @ouve.ideia %>
+</p>
+
+<p>
+  <b>Municipio:</b>
+  <%= @ouve.municipio.nome %>
+</p>
+
+<p>
+  <b>Ministerio:</b>
+  <%= @ouve.ministerio.nome %>
+</p>
+
+
+<%= link_to 'Edit', edit_oufe_path(@ouve) %> |
+<%= link_to 'Back', ouves_path %>

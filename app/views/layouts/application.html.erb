@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vozdopovo</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<head>
+<h1><%= link_to "Voz do Povo", :controller => :home, :action => :index %> </h1>
+<nav>
+<%= link_to "Ouve", ouves_path %>
+<%= link_to "Municípios", municipios_path %> 
+<%= link_to "Ministérios", ministerios_path %>
+<%= link_to "Tags", tags_path %>
+<nav>
+</head>
+
+
+<%= yield %>
+
+</body>
+</html>

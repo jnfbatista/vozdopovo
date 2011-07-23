@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  titulo: MyString
+  ideia: MyText
+  municipio: 
+  ministerio: 
+
+two:
+  titulo: MyString
+  ideia: MyText
+  municipio: 
+  ministerio: 

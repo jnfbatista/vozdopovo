@@ -1,0 +1,2 @@
+module OuvesHelper
+end

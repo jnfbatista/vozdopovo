@@ -1,0 +1,29 @@
+<h1>Listing ouves</h1>
+
+<table>
+  <tr>
+    <th>Titulo</th>
+    <th>Ideia</th>
+    <th>Municipio</th>
+    <th>Ministerio</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ouves.each do |ouve| %>
+  <tr>
+    <td><%= ouve.titulo %></td>
+    <td><%= ouve.ideia %></td>
+    <td><%= ouve.municipio %></td>
+    <td><%= ouve.ministerio %></td>
+    <td><%= link_to 'Show', ouve %></td>
+    <td><%= link_to 'Edit', edit_oufe_path(ouve) %></td>
+    <td><%= link_to 'Destroy', ouve, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ouve', new_oufe_path %>
