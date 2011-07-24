@@ -1,32 +1,204 @@
-<%= link_to "Log in with Facebook", "/auth/facebook" %>
+  <header>
 
 
-<div id="new_main">
-<% form_for(@ouve) do |f| %>
-  <div class="field">
-  <p> Ouve, <%= f.text_field :titulo , :onclick => "$('#hidden_form_part').slideDown('slow');" %> 
-    <%= f.submit %> 
-  </p>
-  </div>
-  <div id="hidden_form_part">
-  <div class="field">
-    <%= f.label :ideia %><br />
-    <%= f.text_area :ideia %>
-  </div>
-  <div class="field">
-    <%= f.label :municipio %><br />
-    <%= f.collection_select( :municipio_id , Municipio.all, :id, :nome, {:include_blank => true}) %>
-  </div>
-  <div class="field">
-    <%= f.label :ministerio %><br />
-    <%= f.collection_select( :ministerio_id, Ministerio.all, :id, :nome, {:include_blank => true}) %>
-  </div>
-  </div>
-</div>
-<% end %>
+    <% form_for :ouve, @Ouve,  :html => {:id => "signup", :class => "container clearfix"} do |f| %>
+        <label for="title">Eu acho que</label>
+        <%= f.text_field :titulo, :id => "title", :placeholder => "coiso" %>
 
-<div id="content">
-<% Ouve.all.each do |ouve|  %>
-	<p> Título : <%= ouve.titulo %> </p>
-<% end %>
-</div>
+        <div id="submit" class="clearfix">
+            <span>Faz-te ouvir!</span>
+            <%= image_tag("submit_button_icon.png", :alt => "Submete a cena, moço") %>
+        </div>
+
+        <div id="formHidden" class="clearfix">
+
+          <%= f.label :ideia, "Mais detalhadamente, "%>
+          <%= f.text_area :ideia %>
+
+          <%= f.collection_select( :municipio_id , Municipio.all, :id, :nome, {:include_blank => true}) %>
+
+          <%= f.collection_select( :ministerio_id, Ministerio.all, :id, :nome, {:include_blank => true}) %>
+
+          <div class="clearfix"></div>
+
+          <%= link_to "Log in with Facebook", "/auth/facebook", :id => "facebookConnect" %>
+
+        </div>
+        
+
+    <% end %>
+
+  </header>
+
+  <section id="content" class="container clearfix">
+
+      <aside class="clearfix">
+
+          <section id="ministerio">
+
+              <div id="ministerioHead" class="clearfix">
+                  <h3>Saúde</h3>
+                  <%= image_tag("ministerio_arrow.png", :alt => "Muda o ministério, moço") %>
+              </div>
+
+              <ul>
+                  <li>Ministério I</li>
+                  <span class="separator"></span>
+                  <li>Ministério I</li>
+                  <span class="separator"></span>
+                  <li>Ministério I</li>
+                  <span class="separator"></span>
+                  <li>Ministério I</li>
+                  <span class="separator"></span>
+                  <li>Ministério I</li>
+                  <span class="separator"></span>
+                  <li>Ministério I</li>
+                  <span class="separator"></span>
+                  <li>Ministério I</li>
+                  <span class="separator"></span>
+                  <li>Ministério I</li>
+              </ul>
+
+          </section>
+
+          <section id="map">
+              <span class="pos" style="left: 10px; top: 50px">1</span>
+              <span class="pos" style="left: 40px; top: 0px">2</span>
+              <span class="pos" style="left: 200px; top: 100px">3</span>
+              <span class="pos" style="left: 50px; top: 280px">4</span>
+          </section>
+
+      </aside>
+
+      <section id="ouves">
+
+          <article class="ouve clearfix">
+
+              <img class="photo" src="./images/helio.png" />
+
+              <div class="info">
+                  <h3>A mim, o governo não me assiste</h3>
+
+                  <div class="tags">
+                      <span>medo</span>
+                      <span>não</span>
+                      <span>assiste</span>
+                  </div>
+              </div>
+
+              <div class="social">
+                  <div class="socialItem">
+                      <span>3</span>
+                      <img src="./images/comments.png" alt="Comentários" />
+                  </div>
+
+                  <div class="socialItem">
+                      <span>3</span>
+                      <img src="./images/like.png" alt="Fixes" />
+                  </div>
+
+              </div>
+              
+          </article>
+
+          <span class="separator"></span>
+
+          <article class="ouve clearfix">
+
+              <img class="photo" src="./images/helio.png" />
+
+              <div class="info">
+                  <h3>A mim, o governo não me assiste</h3>
+
+                  <div class="tags">
+                      <span>medo</span>
+                      <span>não</span>
+                      <span>assiste</span>
+                  </div>
+              </div>
+
+              <div class="social">
+                  <div class="socialItem">
+                      <span>3</span>
+                      <img src="./images/comments.png" alt="Comentários" />
+                  </div>
+
+                  <div class="socialItem">
+                      <span>3</span>
+                      <img src="./images/like.png" alt="Fixes" />
+                  </div>
+
+              </div>
+              
+          </article>
+
+          <span class="separator"></span>
+
+
+          <article class="ouve clearfix">
+
+              <img class="photo" src="./images/helio.png" />
+
+              <div class="info">
+                  <h3>A mim, o governo não me assiste</h3>
+
+                  <div class="tags">
+                      <span>medo</span>
+                      <span>não</span>
+                      <span>assiste</span>
+                  </div>
+              </div>
+
+              <div class="social">
+                  <div class="socialItem">
+                      <span>3</span>
+                      <img src="./images/comments.png" alt="Comentários" />
+                  </div>
+
+                  <div class="socialItem">
+                      <span>3</span>
+                      <img src="./images/like.png" alt="Fixes" />
+                  </div>
+
+              </div>
+              
+          </article>
+
+          <span class="separator"></span>
+
+
+          <article class="ouve clearfix">
+
+              <img class="photo" src="./images/helio.png" />
+
+              <div class="info">
+                  <h3>A mim, o governo não assiste</h3>
+
+                  <div class="tags">
+                      <span>medo</span>
+                      <span>não</span>
+                      <span>assiste</span>
+                  </div>
+              </div>
+
+              <div class="social">
+                  <div class="socialItem">
+                      <span>3</span>
+                      <img src="./images/comments.png" alt="Comentários" />
+                  </div>
+
+                  <div class="socialItem">
+                      <span>3</span>
+                      <img src="./images/like.png" alt="Fixes" />
+                  </div>
+
+              </div>
+              
+          </article>
+
+      </section>
+
+  </section>
+
+  <footer class="container">
+  </footer>
