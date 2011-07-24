@@ -1,36 +1,47 @@
   <header>
+    <section class="container">
 
+      <a id="logo" href=".">
+        <h1>A voz do povo</h1>
+        <h2>Dá voz à tua voz</h2>
+      </a>
 
-    <% form_for :ouve, @Ouve,  :html => {:id => "signup", :class => "container clearfix"} do |f| %>
-        <label for="title">Eu acho que</label>
-        <%= f.text_field :titulo, :id => "title", :placeholder => "coiso" %>
+      <% form_for :ouve, @Ouve,  :html => {:id => "signup", :class => "clearfix"} do |f| %>
 
-        <div id="submit" class="clearfix">
-            <span>Faz-te ouvir!</span>
-            <%= image_tag("submit_button_icon.png", :alt => "Submete a cena, moço") %>
-        </div>
+          <label for="title">Eu acho que</label>
+          <%= f.text_field :titulo, :id => "title", :placeholder => "coiso" %>
 
-        <div id="formHidden" class="clearfix">
+          <div id="submit" class="clearfix">
+              <span>Faz-te ouvir!</span>
+              <%= image_tag("submit_button_icon.png", :alt => "Submete a cena, moço") %>
+          </div>
 
-          <%= f.label :ideia, "Mais detalhadamente, "%>
-          <%= f.text_area :ideia %>
+          <div id="formHidden" class="clearfix">
 
-          <%= f.collection_select( :municipio_id , Municipio.all, :id, :nome, {:include_blank => true}) %>
+            <%= f.label :ideia, "Mais detalhadamente, "%>
+            <%= f.text_area :ideia %>
 
-          <%= f.collection_select( :ministerio_id, Ministerio.all, :id, :nome, {:include_blank => true}) %>
+            <%= f.collection_select( :municipio_id , Municipio.all, :id, :nome, {:include_blank => true}) %>
 
-          <div class="clearfix"></div>
+            <%= f.collection_select( :ministerio_id, Ministerio.all, :id, :nome, {:include_blank => true}) %>
 
-          <%= link_to "Log in with Facebook", "/auth/facebook", :id => "facebookConnect" %>
+            <div class="clearfix"></div>
 
-        </div>
-        
+            <%= link_to "Liga-te através do Facetruques", "/auth/facebook", :id => "facebookConnect" %>
 
-    <% end %>
+          </div>      
+
+      <% end %>
+
+    </section>
 
   </header>
 
-  <section id="content" class="container clearfix">
+  <section id="content" class="container">
+
+    <a id="back" href="">« Voltar</a>
+
+    <div class="wrapper clearfix">
 
       <aside class="clearfix">
 
@@ -62,22 +73,28 @@
           </section>
 
           <section id="map">
-              <span class="pos" style="left: 10px; top: 50px">1</span>
-              <span class="pos" style="left: 40px; top: 0px">2</span>
-              <span class="pos" style="left: 200px; top: 100px">3</span>
-              <span class="pos" style="left: 50px; top: 280px">4</span>
+            <% @count = 0 %>
+            <% @nums.each do |n| %>
+              <span class="pos" style="left: <%= n[0] %>px; top: <%= n[1] %>px" id="<%= @ouves[@count].id %>">
+                <%= @count %>
+              </span>
+
+              <% @count = @count + 1%>
+            <% end %>
           </section>
 
       </aside>
 
       <section id="ouves">
 
-          <article class="ouve clearfix">
+        <% @ouves.each do |o| %>
+
+          <a class="ouve clearfix" id="<%= o.id %>" href="./ouves/<%= o.id %>">
 
               <%= image_tag("helio.png", :class => "photo") %>
 
               <div class="info">
-                  <h3>A mim, o governo é uma cena que não me assiste</h3>
+                  <h3><%= o.titulo %></h3>
 
                   <div class="tags">
                       <span>medo</span>
@@ -99,108 +116,77 @@
 
               </div>
               
-          </article>
+          </a>
 
-          <span class="separator"></span>
+          <% if o != @ouves.last %>
+            <span class="separator"></span>
+          <% end %>
 
-
-          <article class="ouve clearfix">
-
-              <%= image_tag("helio.png", :class => "photo") %>
-
-              <div class="info">
-                  <h3>A mim, o governo é uma cena que não me assiste</h3>
-
-                  <div class="tags">
-                      <span>medo</span>
-                      <span>não</span>
-                      <span>assiste</span>
-                  </div>
-              </div>
-
-              <div class="social">
-                  <div class="socialItem">
-                      <span>3</span>
-                      <%= image_tag("comments.png", :alt => "Comentários") %>
-                  </div>
-
-                  <div class="socialItem">
-                      <span>3</span>
-                      <%= image_tag("like.png", :alt => "Fixes") %>
-                  </div>
-
-              </div>
-              
-          </article>
-
-          <span class="separator"></span>
-
-
-          <article class="ouve clearfix">
-
-              <%= image_tag("helio.png", :class => "photo") %>
-
-              <div class="info">
-                  <h3>A mim, o governo é uma cena que não me assiste</h3>
-
-                  <div class="tags">
-                      <span>medo</span>
-                      <span>não</span>
-                      <span>assiste</span>
-                  </div>
-              </div>
-
-              <div class="social">
-                  <div class="socialItem">
-                      <span>3</span>
-                      <%= image_tag("comments.png", :alt => "Comentários") %>
-                  </div>
-
-                  <div class="socialItem">
-                      <span>3</span>
-                      <%= image_tag("like.png", :alt => "Fixes") %>
-                  </div>
-
-              </div>
-              
-          </article>
-
-          <span class="separator"></span>
-
-
-          <article class="ouve clearfix">
-
-              <%= image_tag("helio.png", :class => "photo") %>
-
-              <div class="info">
-                  <h3>A mim, o governo é uma cena que não me assiste</h3>
-
-                  <div class="tags">
-                      <span>medo</span>
-                      <span>não</span>
-                      <span>assiste</span>
-                  </div>
-              </div>
-
-              <div class="social">
-                  <div class="socialItem">
-                      <span>3</span>
-                      <%= image_tag("comments.png", :alt => "Comentários") %>
-                  </div>
-
-                  <div class="socialItem">
-                      <span>3</span>
-                      <%= image_tag("like.png", :alt => "Fixes") %>
-                  </div>
-
-              </div>
-              
-          </article>
-
-          <span class="separator"></span>
-
+        <% end %>
 
       </section>
+
+      <section id="ouve">
+
+          <%= image_tag("hipsterfail.jpg", :class => "photo") %>
+
+          <div class="info clearfix">
+              <h3>coiso</h3>
+
+              <div class="tags">
+                  <span>medo</span>
+                  <span>não</span>
+                  <span>assiste</span>
+              </div>
+          </div>
+
+          <div class="social">
+              <div class="socialItem">
+                  <span>3</span>
+                  <%= image_tag("comments.png", :alt => "Comentários") %>
+              </div>
+
+              <div class="socialItem">
+                  <span>3</span>
+                  <%= image_tag("like.png", :alt => "Fixes") %>
+              </div>
+
+          </div>
+
+          <div class="clearfix"></div>
+
+          <p class="description">
+            Cow rump chicken, tri-tip shank fatback meatball chuck meatloaf tenderloin turkey pork belly spare ribs biltong. Flank pig chicken shankle, beef meatball beef ribs short loin jowl tail. Hamburger ground round meatball fatback bresaola. Brisket ball tip short ribs shankle jerky rump ham hock. Jowl meatloaf jerky pastrami. Sausage bresaola hamburger beef, meatball corned beef ham drumstick pork belly ground round short ribs biltong bacon spare ribs meatloaf. Corned beef fatback tail cow, pig chicken bacon pancetta beef ribeye strip steak meatloaf. 
+          </p> 
+
+          <article class="discussion">
+            <h3>Discussion</h3>
+
+            <article class="comment clearfix"> 
+              <%= image_tag("helio.png", :class => "photo") %>
+
+              <div class="text">
+                <p>Ganda comentário, oh moço</p>
+                <span>às 9.30 de Domingo</span>
+              </div>
+            </article>
+
+    
+            <article class="comment clearfix"> 
+              <%= image_tag("helio.png", :class => "photo") %>
+
+              <div class="text">
+                <p>Ganda comentário, oh moço</p>
+                <span>às 9.30 de Domingo</span>
+              </div>
+            </article>
+
+          </article>
+
+        
+      </section>
+
+    </div>
 
   </section>
 

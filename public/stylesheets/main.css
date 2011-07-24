@@ -163,10 +163,33 @@ header {
     background-color: #f0f0f0;
 }
 
+#logo {
+  padding-top: 30px;
+  text-decoration: none;
+  display: block;
+  color: #fff;
+}
+
+#logo > * {
+  margin: 0;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+#logo > h1 {
+  font-size: 3em;
+}
+
+#logo > h2 {
+  font-family: Aller;
+  color: #777;
+}
+
 /* SIGNUP */
 
 #signup {
-    padding: 80px 0 30px 0;
+    padding: 50px 0 30px 0;
     position: relative;
 }
 
@@ -282,13 +305,14 @@ header {
 
 #signup select {
   float: left;
+  margin-top: 20px;
 }
 
 #facebookConnect {
     border-radius: 35px;
     margin-top: -5px;
 
-    width: 180px;
+    width: 260px;
     height: 36px;
 
     background-image: -webkit-linear-gradient(top, #637bac, #29447e);
@@ -316,7 +340,27 @@ header {
 /* CONTENT */
 
 #content {
-    margin: 60px auto;
+    margin: 40px auto;
+    overflow: hidden;
+
+    position: relative;
+}
+
+#content > .wrapper {
+  width: 1500px;
+
+  -webkit-transition: margin 0.3s ease-out;
+}
+
+#back {
+  font-family: AllerBold;
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #000;
+
+  margin-bottom: 15px;
+  display: block;
+  visibility: hidden;
 }
 
 aside {
@@ -441,8 +485,12 @@ aside {
     font-size: 1.1em;
 }
 
+#map .pos.selected {
+  background-color: #990000;
+}
+
 #ouves {
-    width: 616px;
+    width: 636px;
     min-height: 350px;
 
     float: left;
@@ -468,9 +516,29 @@ aside {
 }
 
 .ouve {
-    width: 556px;
-    margin: 0 auto;
-    padding: 30px 0;
+    max-width: 576px;
+    padding: 30px;
+
+    color: #000;
+    text-decoration: none;
+
+    display: block;
+}
+
+.ouve:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.ouve:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+
+.ouve:hover {
+    background-color: #dfdfdf;
+    cursor: pointer;
 }
 
 .ouve .info {
@@ -479,7 +547,11 @@ aside {
 
 .ouve .info > h3 {
     margin: 0;
-    line-height: 1em;        
+    line-height: 1.1em;
+}
+
+.ouve .info .tags {
+  margin-top: 5px;
 }
 
 .ouve .tags > span {
@@ -497,6 +569,82 @@ aside {
 
 .ouve .social {
     float: right;
+}
+
+
+#ouve {
+  float: left;
+  width: 426px;
+
+  margin-left: 10px;
+  background-color: #f0f0f0;
+
+  border-radius: 10px;
+
+  padding: 30px;
+
+}
+
+#ouve > .photo {
+  float: left;
+}
+
+#ouve .info {
+  margin-left: 15px;
+  float: left;
+}
+
+#ouve .info h3 {
+  line-height: 1em;
+  margin: 0;
+}
+
+#ouve .info .tags span {
+  display: inline-block;
+  height: 18px;
+  border-radius: 23px;
+
+  line-height: 18px;
+
+  padding: 0 4px;
+
+  font-size: 0.8em;
+  background-color: #bbb;
+}
+
+#ouve .social {
+  float: right;
+}
+
+#ouve .description {
+  margin-top: 1.5em;
+}
+
+#ouve .discussion {
+  margin-top: 1.5em;
+}
+
+#ouve .discussion .comment {
+  margin-top: 10px;
+}
+
+#ouve .discussion .comment .photo {
+  float: left;
+}
+
+#ouve .discussion .comment .text {
+  float: left;
+  margin-left: 10px;
+}
+
+#ouve .discussion .comment p {
+  margin: 0;
+}
+
+#ouve .discussion .comment span {
+  display: block;
+  font-size: 0.8em;
+  color: #ccc;
 }
 
 
