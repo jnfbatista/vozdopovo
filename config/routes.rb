@@ -9,6 +9,9 @@ Vozdopovo::Application.routes.draw do
 
   get "home/index"
 
+  match '/auth/facebook/callback' => 'services#create' 
+  resources :services, :only => [:index, :create]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

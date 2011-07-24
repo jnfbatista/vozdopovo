@@ -1,3 +1,29 @@
+<%= link_to "Log in with Facebook", "/auth/facebook" %>
+
+
+<div id="new_main">
+<% form_for(@ouve) do |f| %>
+  <div class="field">
+  <p> Ouve, <%= f.text_field :titulo , :onclick => "$('#hidden_form_part').slideDown('slow');" %> 
+    <%= f.submit %> 
+  </p>
+  </div>
+  <div id="hidden_form_part">
+  <div class="field">
+    <%= f.label :ideia %><br />
+    <%= f.text_area :ideia %>
+  </div>
+  <div class="field">
+    <%= f.label :municipio %><br />
+    <%= f.collection_select( :municipio_id , Municipio.all, :id, :nome, {:include_blank => true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :ministerio %><br />
+    <%= f.collection_select( :ministerio_id, Ministerio.all, :id, :nome, {:include_blank => true}) %>
+  </div>
+  </div>
+</div>
+<% end %>
 
 <div id="content">
 <% Ouve.all.each do |ouve|  %>

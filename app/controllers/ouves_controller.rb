@@ -32,6 +32,10 @@ class OuvesController < ApplicationController
     end
   end
 
+  def new_main
+   @ouve.titulo = params[:titulo] 
+  end
+
   # GET /ouves/1/edit
   def edit
     @ouve = Ouve.find(params[:id])
