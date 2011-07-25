@@ -174,11 +174,11 @@ header {
   margin: 0;
   display: block;
   text-decoration: none;
-  color: #fff;
 }
 
 #logo > h1 {
   font-size: 3em;
+  color: #000;
 }
 
 #logo > h2 {
@@ -204,6 +204,7 @@ header {
 #signup label {
     font-family: AllerBold, sans-serif;
     font-size: 2em;
+    color: #333;
 }
 
 #title {
@@ -218,7 +219,11 @@ header {
   font-size: 1.5em;
 
   border: 0;
+
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
   border-radius: 35px;
+
   margin-top: -5px;
 
 }
@@ -236,7 +241,11 @@ header {
 
 #submit {
     border: 0;
+
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
     border-radius: 35px;
+
     margin-top: -5px;
 
     width: 180px;
@@ -309,13 +318,19 @@ header {
 }
 
 #facebookConnect {
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
     border-radius: 35px;
+
     margin-top: -5px;
 
     width: 260px;
     height: 36px;
 
-    background-image: -webkit-linear-gradient(top, #637bac, #29447e);
+    background-color: #637bac;
+    background: -webkit-linear-gradient(top, #637bac, #29447e);
+    background: -moz-linear-gradient(top, #637bac 0%, #29447e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#637bac', endColorstr='#29447e',GradientType=0 );
 
     font-family: AllerBold, sans-serif;
     color: #fff;
@@ -387,6 +402,8 @@ aside {
     top: 0;
     z-index: 9999;
 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
 }
 
@@ -422,6 +439,8 @@ aside {
 
     list-style: none;
 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
 
     background-color: #969696;
@@ -465,12 +484,17 @@ aside {
 
     margin-top: 10px;
 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
 }
 
 #map .pos {
     width: 25px;
     height: 25px;
+
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
     border-radius: 25px;
 
     background-color: #db0000;
@@ -497,6 +521,8 @@ aside {
 
     background-color: #f0f0f0;
 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
 }
 
@@ -543,6 +569,8 @@ aside {
 
 .ouve .info {
     margin-left: 20px;
+    width: 70%;
+    overflow: hidden;
 }
 
 .ouve .info > h3 {
@@ -557,6 +585,9 @@ aside {
 .ouve .tags > span {
     display: inline-block;
     height: 18px;
+
+    -webkit-border-radius: 23px;
+    -moz-border-radius: 23px;
     border-radius: 23px;
 
     line-height: 18px;
@@ -579,6 +610,8 @@ aside {
   margin-left: 10px;
   background-color: #f0f0f0;
 
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
   border-radius: 10px;
 
   padding: 30px;
@@ -602,6 +635,9 @@ aside {
 #ouve .info .tags span {
   display: inline-block;
   height: 18px;
+  
+  -webkit-border-radius: 23px;
+  -moz-border-radius: 23px;
   border-radius: 23px;
 
   line-height: 18px;
@@ -644,14 +680,32 @@ aside {
 #ouve .discussion .comment span {
   display: block;
   font-size: 0.8em;
-  color: #ccc;
+  color: #555;
 }
 
 
 /* FOOTER */
 
 footer {
-    height: 150px;
+    height: 50px;
+}
+
+#by {
+  font-size: 0.9em;
+}
+
+#by a {
+  color: #555;
+  text-decoration: none;
+}
+
+#by a:hover {
+  text-decoration: underline;
+  color: #777;
+}
+
+#by span {
+  font-size: 0.7em;
 }
 
 /*  Tablet Layout: 768px.
